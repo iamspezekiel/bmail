@@ -1,0 +1,1153 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BuilderJS API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-024da600.js"></script>
+
+    <style type="text/css">
+      .logo {
+        width:40px;
+        height:40px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body class="index" data-languages="[&quot;html&quot;,&quot;php&quot;,&quot;ruby&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <div style="color:#ccc;padding-left:15px;padding-top:15px;display: flex;">
+        <img src="images/logo-1e26a4cf.png" class="logo" alt="" />
+        <div style="margin-top:5px;margin-left:12px"><p style="margin:0">BuilderJS 6.0</p></div>
+      </div>
+        <div class="lang-selector">
+              <a href="#" data-language-name="html">html</a>
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#system-requirements" class="toc-h1 toc-link" data-title="System requirements">System requirements</a>
+          </li>
+          <li>
+            <a href="#get-quickly-started" class="toc-h1 toc-link" data-title="Get quickly started">Get quickly started</a>
+          </li>
+          <li>
+            <a href="#installation" class="toc-h1 toc-link" data-title="Installation">Installation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#include-required-files" class="toc-h2 toc-link" data-title="Include required files">Include required files</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-page" class="toc-h2 toc-link" data-title="Create a new page">Create a new page</a>
+                  </li>
+                  <li>
+                    <a href="#open-a-page" class="toc-h2 toc-link" data-title="Open a page">Open a page</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#configure-server-script" class="toc-h1 toc-link" data-title="Configure server script">Configure server script</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#save" class="toc-h2 toc-link" data-title="Save">Save</a>
+                  </li>
+                  <li>
+                    <a href="#export-and-download" class="toc-h2 toc-link" data-title="Export and download">Export and download</a>
+                  </li>
+                  <li>
+                    <a href="#make-inline-css" class="toc-h2 toc-link" data-title="Make inline CSS">Make inline CSS</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#features-overview" class="toc-h1 toc-link" data-title="Features overview">Features overview</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#visual-drag-amp-drop-designer" class="toc-h2 toc-link" data-title="Visual drag &amp; drop designer">Visual drag &amp; drop designer</a>
+                  </li>
+                  <li>
+                    <a href="#visual-styling-sade-easy" class="toc-h2 toc-link" data-title="Visual styling sade easy">Visual styling sade easy</a>
+                  </li>
+                  <li>
+                    <a href="#rich-library-of-composite-elements" class="toc-h2 toc-link" data-title="Rich library of composite elements">Rich library of composite elements</a>
+                  </li>
+                  <li>
+                    <a href="#seamless-device-preview" class="toc-h2 toc-link" data-title="Seamless Device Preview">Seamless Device Preview</a>
+                  </li>
+                  <li>
+                    <a href="#ai-powered-content-assistance" class="toc-h2 toc-link" data-title="AI-Powered Content Assistance">AI-Powered Content Assistance</a>
+                  </li>
+                  <li>
+                    <a href="#universal-template-format" class="toc-h2 toc-link" data-title="Universal Template Format">Universal Template Format</a>
+                  </li>
+                  <li>
+                    <a href="#clean-amp-semantic-html-output" class="toc-h2 toc-link" data-title="Clean &amp; Semantic HTML Output">Clean &amp; Semantic HTML Output</a>
+                  </li>
+                  <li>
+                    <a href="#revision-history" class="toc-h2 toc-link" data-title="Revision History">Revision History</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#theme-amp-template" class="toc-h1 toc-link" data-title="Theme &amp; template">Theme &amp; template</a>
+          </li>
+          <li>
+            <a href="#common-issues" class="toc-h1 toc-link" data-title="Common issues">Common issues</a>
+          </li>
+          <li>
+            <a href="#customization" class="toc-h1 toc-link" data-title="Customization">Customization</a>
+          </li>
+          <li>
+            <a href="#api-reference" class="toc-h1 toc-link" data-title="API reference">API reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-methods" class="toc-h2 toc-link" data-title="API methods">API methods</a>
+                  </li>
+                  <li>
+                    <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error codes">Error codes</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://codecanyon.net/item/builderjs-html-email-page-builder/27146783'>Get BuilderJS 6.0</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to <strong>BuilderJS 6.0</strong>, the most powerful HTML web designer tool. BuilderJS is the easiest, quickest way to design elegant, mobile responsive HTML pages and emails for your business.</p>
+
+<p>BuilderJS is built using pure JavaScript and HTML, making it easy to integrate with any web application, regardless of the server-side programming language (e.g., Java, .NET, PHP, Ruby on Rails, Python, etc.).</p>
+
+<p>BuilderJS is fully customizable and designed for flexible integration scenarios. You can use it as a standalone application or embed it into your own web app, interacting with it through its simple and easy API. BuilderJS has been choosen by many popular frameworks as their HTML designer on the web UI.</p>
+
+<p>Details of all available API methods are explained throughout this documentation.</p>
+<h1 id='system-requirements'>System requirements</h1>
+<p>BuilderJS runs in a web browser and interacts with server-side scripts through standard AJAX requests and JavaScript methods that are supported by all modern browsers. That means BuilderJS can run on virtually any browser, including but not limited to:</p>
+
+<ul>
+<li>Google Chrome</li>
+<li>Mozilla Firefox</li>
+<li>Microsoft Edge</li>
+<li>Apple Safari</li>
+<li>Opera</li>
+</ul>
+
+<p>BuilderJS may not be compatible with the legacy Internet Explorer: it might work, but functionality is not guaranteed.
+As a JavaScript-based application, BuilderJS is independent of both the operating system and the server-side scripting technology used.</p>
+<h1 id='get-quickly-started'>Get quickly started</h1>
+<blockquote>
+<p>Sample virtual host configuration for Apache and Nginx to for the /var/www/demo document root</p>
+</blockquote>
+<div class="highlight"><pre class="highlight apache tab-apache"><code><span class="c"># Apache</span>
+<span class="p">&lt;</span><span class="nl">VirtualHost</span><span class="sr"> *:80</span><span class="p">&gt;
+</span>    <span class="nc">DocumentRoot</span> /var/www/demo
+
+    <span class="p">&lt;</span><span class="nl">Directory</span><span class="sr"> /var/www/demo</span><span class="p">&gt;
+</span>        <span class="nc">Options</span> <span class="ss">Indexes</span> <span class="ss">FollowSymLinks</span>
+        <span class="nc">AllowOverride</span> <span class="ss">All</span>
+        <span class="nc">Require</span> <span class="ss">all</span> granted
+    <span class="p">&lt;/</span><span class="nl">Directory</span><span class="p">&gt;
+&lt;/</span><span class="nl">VirtualHost</span><span class="p">&gt;
+</span></code></pre></div><div class="highlight"><pre class="highlight nginx tab-nginx"><code><span class="c1"># Nginx</span>
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+
+    <span class="kn">root</span> <span class="n">/var/www/demo</span><span class="p">;</span>
+    <span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.php</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri</span><span class="n">/</span> <span class="p">=</span><span class="mi">404</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+        <span class="kn">include</span> <span class="nc">snippets/fastcgi-php</span><span class="s">.conf</span><span class="p">;</span>
+        <span class="kn">fastcgi_pass</span> <span class="s">unix:/run/php/php8.4-fpm.sock</span><span class="p">;</span>  <span class="c1"># Adjust version if needed</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The installation process is explained in detail in the Installation section. However, if you&#39;d like a quick preview of BuilderJS in action with its core features, simply follow this <strong>no-configuration installation guideline</strong>:</p>
+
+<ul>
+<li><p><strong>Step 1</strong>. Download the BuilderJS package you get from your purchase, it is a .zip file containing the core JavaScript files as well as a fully-working demo which helps you quickly get started.</p></li>
+<li><p><strong>Step 2</strong>. Extract the BuilderJS&#39;s .zip package and copy its <code>demo</code> folder to your web server&#39;s document root, for example <code>/var/www/demo</code>. You can find in the right sample virtual host configuration for Apache and Nginx.</p></li>
+<li><p><strong>Step 3</strong>. Make sure your Apache or Nginx web application server is running, then open the corresponding URL in your browser to launch the demo, for example: <code>http://localhost/demo/</code></p></li>
+</ul>
+
+<p>That&#39;s it! You can now explore your own instance of BuilderJS hosted on your server like below:</p>
+
+<p><img src="images/screenshot-1-68805768.png" title="Sample A" alt="Theme A" /></p>
+
+<p>The demo includes a sample <code>index.php</code> file that loads the necessary BuilderJS resources. It also comes with with a default set of server-side scripts (written in PHP) to handle essential features such as Save and Export. You can use the provided PHP scripts as-is or implement similar functionality in any server-side language you&#39;re comfortable with, such as Ruby, Perl, .NET, Java, and more.</p>
+
+<aside class="notice">
+As you can see, getting BuilderJS up and running involves a few steps with certain required parameters. This is because BuilderJS was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
+</aside>
+<h1 id='installation'>Installation</h1>
+<p>In the previous section, we provided a quick-start guide to help you run a demo installation of BuilderJS, allowing you to see how it works in your environment. In this section, we&#39;ll walk through a step-by-step guide to installing BuilderJS and configuring it to work with your server-side scripting.</p>
+
+<p>There are two main parts to the installation:</p>
+
+<ul>
+<li><p>The BuilderJS frontend (client side)</p></li>
+<li><p>The server-side script</p></li>
+</ul>
+
+<p>Explanation: BuilderJS runs entirely on the client side - in the user&#39;s browser - where it provides a visual interface for building beautiful HTML pages. However, when it comes to saving or publishing a user&#39;s design, you&#39;ll need to capture the output (the HTML content) and send it to a server-side script, which either saves the data or prepares it for download.</p>
+
+<p>In the next section, we&#39;ll show you how to set up BuilderJS and include a demo illustrating how to capture its output and pass it to a server-side script for storage or export.</p>
+<h2 id='include-required-files'>Include required files</h2><div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/builder/dist/builder.css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">"/builder/dist/builder.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">language=</span><span class="s">"Javascript"</span><span class="nt">&gt;</span>
+            <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
+                <span class="na">mainContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">settingContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#idDiv3</span><span class="dl">'</span><span class="p">,</span>
+            <span class="p">});</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>There are 2 files which are shipped with BuilderJS bundle</p>
+
+<ul>
+<li>builder.js - include all core functionality of BuilderJS</li>
+<li>style.css - the default styles for BuilderJS, used for its controls and dashboard.</li>
+</ul>
+
+<p>Optionally, you can include Bootstrap CSS to improve userbility experience.</p>
+
+<p>Once you have included BuilderJS .js file, the next step is to write JavaScript code to initalize the Builder. The example code on the right to see how to initalize a <code>builder</code> object with minimum configuration. After this step, you will have a <code>builder</code> object available for rendering in the next step.</p>
+<h2 id='create-a-new-page'>Create a new page</h2><div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/builder/dist/builder.css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">"/builder/dist/builder.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">language=</span><span class="s">"Javascript"</span><span class="nt">&gt;</span>
+            <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
+                <span class="na">mainContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">settingContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#idDiv3</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">themeUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/myAwesomeTheme/</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// required by init() function</span>
+            <span class="p">});</span>
+
+
+            <span class="nx">builder</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">theme</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/theme/abc</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Now it&#39;s time to load the builder in your browser.</p>
+
+<p>If you want to start with a blank page for a new page design, execute the <code>init()</code> function. See the example code in the right panel.</p>
+
+<p>Note the <code>themeUrl</code> parameter in the constructor method, this is required to initialize a new page. In BuilderJS, every page is created based on a theme, which consists of a set of related styles and page elements.</p>
+
+<p>If everything is configured correctly, the builder interface will be rendered in your browser, and a sample page like the one below will be loaded:</p>
+
+<p><img src="images/screenshot-2-05756d85.png" title="Sample B" alt="Theme B" /></p>
+
+<p>Another sample:
+<img src="images/screenshot-3-cf79d5f2.png" title="Sample C" alt="Theme C" /></p>
+<h2 id='open-a-page'>Open a page</h2>
+<p>Rather than starting from a blank page, you&#39;ll often want to load previously saved work to continue designing. BuilderJS supports multiple ways to load HTML content into the builder view.</p>
+<h3 id='from-json-string'>From JSON string</h3><div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/builder/dist/builder.css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">"/builder/dist/builder.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">language=</span><span class="s">"Javascript"</span><span class="nt">&gt;</span>
+            <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
+                <span class="na">mainContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">settingContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#idDiv3</span><span class="dl">'</span><span class="p">,</span>
+            <span class="p">});</span>
+
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;?php echo file_get_contents('/data/Pages/MyPage.json'); ?&gt;</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">builder</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>In this example, the data variable contains the entire JSON representation of an HTML page as a string. This string is then passed to the builder&#39;s load function to display the content in the browser.</p>
+
+<p>BuilderJS pages are stored in JSON format, which can be saved in any type of storage - such as the file system, a relational database (RDBMS), and more. Later, the stored JSON can be loaded back into the design view.</p>
+
+<p>Don&#39;t worry about the JSON format or how to generate it - this will be explained in the Storage section below.</p>
+<h3 id='from-url'>From URL</h3><div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/builder/dist/builder.css"</span><span class="nt">&gt;&lt;/link&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">"/builder/dist/builder.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">language=</span><span class="s">"Javascript"</span><span class="nt">&gt;</span>
+            <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Builder</span><span class="p">({</span>
+                <span class="na">mainContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">settingContainer</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#idDiv3</span><span class="dl">'</span><span class="p">,</span>
+            <span class="p">});</span>
+
+            <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://example.com/pages/MyPage.json</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">builder</span><span class="p">.</span><span class="nx">loadFromUrl</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Instead of loading the entire JSON data into a JavaScript variable as shown earlier, a more convenient approach is to use the loadFromUrl() method to fetch JSON content from a remote URL.</p>
+
+<p>For example, if your page&#39;s JSON data is stored on a server and accessible at http://example.com/pages/MyPage.json, you can load it using this method as shown in the example.</p>
+
+<p>Don&#39;t worry about the JSON format or how to generate it - this will be covered in the Storage section below.</p>
+
+<p>Below is a summary of the constructor parameters for BuilderJS:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>mainContainer</td>
+<td>The ID of the HTML element into which the builder design will be rendered</td>
+</tr>
+<tr>
+<td>settingContainer</td>
+<td>The ID of the HTML element into which the builder settings will be rendered</td>
+</tr>
+<tr>
+<td>themeUrl</td>
+<td>URL of the theme folder. BuilderJS comes with many themes and even more themes are coming.</td>
+</tr>
+<tr>
+<td>assetUploadHandler</td>
+<td>URL of the server-side script which handles assets uploading</td>
+</tr>
+<tr>
+<td>aiHandler</td>
+<td>URL of the server-side script which handles AI features. See our example writen in PHP for reference.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Loading data from a URL is recommended over embedding a large JSON string directly in your code. Assigning a large JSON string to a JavaScript variable increases the size of your HTML page, which can negatively impact loading performance.
+</aside>
+<h1 id='configure-server-script'>Configure server script</h1>
+<p>Setting up BuilderJS involves certain steps, especially when configuring the page that wraps around it and interacts with it. However, this is intended by design: BuilderJS is built to be fully customizable.</p>
+
+<p>For example, BuilderJS does not include any default <strong>SAVE</strong> or <strong>EXPORT</strong> buttons. You will need to add these buttons yourself and handle their click events. When the user clicks a Save button, it should call the builder&#39;s <code>getJson()</code> API method to retrieve the current design. From there, it&#39;s up to you to handle the result-for instance, by sending it via an AJAX request to a server-side script that saves it to local storage, a database management system (DBMS), or remote storage such as AWS S3.</p>
+
+<p>By creating the buttons yourself, you&#39;re not limited to BuilderJS&#39;s default style-you&#39;re free to place them anywhere on your page and style them however you like.</p>
+<h2 id='save'>Save</h2>
+<blockquote>
+<p>Click on PHP, Ruby or Python tab to see how to implement SAVE operation with a server-side script</p>
+</blockquote>
+<div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"btnSave"</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
+
+  <span class="nt">&lt;script&gt;</span>
+
+    <span class="c1">// Function that handles saving</span>
+    <span class="kd">function</span> <span class="nx">save</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">getJson</span><span class="p">();</span>
+
+      <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">save.php</span><span class="dl">'</span><span class="p">,</span>       <span class="c1">// Your server-side script</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">page_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Page #ID</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">data</span><span class="p">:</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">getJson</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="nl">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Save successful:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+        <span class="p">},</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Assign click event</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">btnSave</span><span class="dl">"</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="nx">save</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/update'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">update_page</span><span class="p">():</span>
+    <span class="n">page_id</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'page_id'</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'data'</span><span class="p">]</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">.</span><span class="n">connector</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span>
+        <span class="n">host</span><span class="o">=</span><span class="s">"localhost"</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="s">"user"</span><span class="p">,</span>
+        <span class="n">password</span><span class="o">=</span><span class="s">"password"</span><span class="p">,</span>
+        <span class="n">database</span><span class="o">=</span><span class="s">"myDB"</span>
+    <span class="p">)</span>
+
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="s">"UPDATE pages SET data = %s WHERE id = %s"</span>
+    <span class="n">cursor</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">page_id</span><span class="p">))</span>
+    <span class="n">conn</span><span class="p">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="n">cursor</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">conn</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="s">"Saved successfully"</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="c1"># Sample controller code for handling the save request</span>
+<span class="c1"># sent from BuilderJS</span>
+
+<span class="nb">require</span> <span class="s1">'activerecord'</span>
+<span class="nb">require</span> <span class="s1">'mysql'</span>
+
+<span class="c1"># Set up MySQL connection</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection</span><span class="p">(</span>
+  <span class="ss">adapter: </span><span class="s1">'mysql2'</span><span class="p">,</span>
+  <span class="ss">database: </span><span class="s1">'myDB'</span><span class="p">,</span>
+  <span class="ss">username: </span><span class="s1">'user'</span><span class="p">,</span>
+  <span class="ss">password: </span><span class="s1">'password'</span>
+<span class="p">)</span>
+
+<span class="c1"># Associate Template class with the `templates` data table</span>
+<span class="k">class</span> <span class="nc">Template</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># associated with `templates` table</span>
+<span class="k">end</span>
+
+<span class="c1"># Retrieve parameters passed to the server script</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:content</span><span class="p">]</span>
+<span class="n">template_id</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+
+<span class="c1"># Actually update the MySQL database</span>
+<span class="n">template</span> <span class="o">=</span> <span class="no">Template</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">template_id</span><span class="p">)</span>
+<span class="n">template</span><span class="p">.</span><span class="nf">content</span> <span class="o">=</span> <span class="n">content</span>
+
+<span class="n">template</span><span class="p">.</span><span class="nf">save</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="c1">// Sample controller code for handling the save request</span>
+<span class="c1">// sent from BuilderJS</span>
+
+<span class="c1">// MySQL credentials</span>
+<span class="nv">$servername</span> <span class="o">=</span> <span class="s2">"localhost"</span><span class="p">;</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="s2">"user"</span><span class="p">;</span>
+<span class="nv">$password</span> <span class="o">=</span> <span class="s2">"password"</span><span class="p">;</span>
+<span class="nv">$dbname</span> <span class="o">=</span> <span class="s2">"myDB"</span><span class="p">;</span>
+
+<span class="c1">// Create connection</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">mysqli</span><span class="p">(</span><span class="nv">$servername</span><span class="p">,</span> <span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$dbname</span><span class="p">);</span>
+
+<span class="c1">// Retrieve parameters passed to the server script</span>
+<span class="nv">$pageId</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'page_id'</span><span class="p">];</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'data'</span><span class="p">];</span>
+
+<span class="c1">// Actually update the MySQL database</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">"UPDATE pages SET data = '</span><span class="si">{</span><span class="nv">$data</span><span class="si">}</span><span class="s2">'
+        WHERE id = '</span><span class="si">{</span><span class="nv">$pageId</span><span class="si">}</span><span class="s2">'"</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">)</span> <span class="o">===</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Saved successfully"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$conn</span><span class="o">-&gt;</span><span class="nf">close</span><span class="p">();</span>
+</code></pre></div>
+<p>Once you have initialized the builder and either loaded a template or started a new page, you can begin designing your pages. To save your current work for future editing, you need to capture the current data from BuilderJS and store it in a system such as a filesystem or MySQL database.</p>
+
+<p>Since BuilderJS is a pure JavaScript application running in the browser, it does not store any data by itself - this is where a server-side script becomes necessary. The most common approach is to use BuilderJS&#39;s <code>getJson()</code> API method to capture the current state, then send the resulting data to a server script via Ajax for storage. In this example, we provide backend handlers implemented in PHP and Ruby, though you can use any programming language you prefer. The key point is capturing and handling the input.</p>
+
+<p>Click the php or ruby tabs in the code sample panel to see the details. Refer to the example on the right to understand how this works in practice.</p>
+
+<p>Summary of steps:</p>
+
+<ul>
+<li>Load BuilderJS</li>
+<li>Create a new page to design</li>
+<li>Add a &quot;Save&quot; button that, when clicked, retrieves the builder data and sends it to the server&#39;s save.php script, which stores the HTML content in a MySQL database.</li>
+</ul>
+
+<p>Instead of storing builder data to MySQL, you are free to handle it any way you want in your server-side script.</p>
+<h2 id='export-and-download'>Export and download</h2><div class="highlight"><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="k">export</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">export.php</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">html</span><span class="p">:</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">getHtml</span><span class="p">(),</span>
+    <span class="p">},</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">OK</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$html</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'html'</span><span class="p">];</span>
+
+<span class="nv">$filename</span> <span class="o">=</span> <span class="s2">"My-Awesome-Design-"</span> <span class="mf">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Ymd_His"</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">".html"</span><span class="p">;</span>
+
+<span class="c1">// Set headers to force download</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Type: text/html'</span><span class="p">);</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Disposition: attachment; filename="'</span> <span class="mf">.</span> <span class="nv">$filename</span> <span class="mf">.</span> <span class="s1">'"'</span><span class="p">);</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Length: '</span> <span class="mf">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$html</span><span class="p">));</span>
+
+<span class="k">echo</span> <span class="nv">$html</span><span class="p">;</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'sinatra'</span>
+<span class="nb">require</span> <span class="s1">'time'</span>
+
+<span class="n">post</span> <span class="s1">'/download'</span> <span class="k">do</span>
+  <span class="n">html</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:html</span><span class="p">]</span>
+
+  <span class="n">timestamp</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s2">"%Y%m%d_%H%M%S"</span><span class="p">)</span>
+  <span class="n">filename</span> <span class="o">=</span> <span class="s2">"My-Awesome-Design-</span><span class="si">#{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.html"</span>
+
+  <span class="n">content_type</span> <span class="s1">'text/html'</span>
+  <span class="n">headers</span> <span class="s1">'Content-Disposition'</span> <span class="o">=&gt;</span> <span class="s2">"attachment; filename=</span><span class="se">\"</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="se">\"</span><span class="s2">"</span>
+  <span class="n">body</span> <span class="n">html</span>
+<span class="k">end</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/download'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">():</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'html'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">().</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%Y%m%d_%H%M%S"</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"My-Awesome-Design-</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s">.html"</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+    <span class="n">response</span><span class="p">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'Content-Type'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'text/html'</span>
+    <span class="n">response</span><span class="p">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'Content-Disposition'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'attachment; filename="</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s">"'</span>
+    <span class="n">response</span><span class="p">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'Content-Length'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">html</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">response</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+</code></pre></div>
+<p>The next common task is exporting the page for real-world use. Once users finish their design and click the <strong>Export</strong> button, the final HTML content is sent to a server-side script that handles the export process-typically via an AJAX request. See the example on the right.</p>
+
+<p>BuilderJS provides a <code>getHtml()</code> method that captures the final HTML of the designed page.</p>
+
+<p>After receiving the HTML content, the server script can save it to a file and make it available for download. The exported HTML file can then be uploaded to a hosting environment as a normal HTML page.</p>
+<h2 id='make-inline-css'>Make inline CSS</h2><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nc">TijsVerkoyen\CssToInlineStyles\CssToInlineStyles</span><span class="p">;</span>
+
+<span class="nv">$html</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'html'</span><span class="p">];</span>
+
+<span class="c1">// DOM parse to extract and load external CSS files</span>
+<span class="nb">libxml_use_internal_errors</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$dom</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DOMDocument</span><span class="p">();</span>
+<span class="nv">$dom</span><span class="o">-&gt;</span><span class="nf">loadHTML</span><span class="p">(</span><span class="nv">$html</span><span class="p">,</span> <span class="no">LIBXML_HTML_NOIMPLIED</span> <span class="o">|</span> <span class="no">LIBXML_HTML_NODEFDTD</span><span class="p">);</span>
+<span class="nb">libxml_clear_errors</span><span class="p">();</span>
+
+<span class="nv">$xpath</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DOMXPath</span><span class="p">(</span><span class="nv">$dom</span><span class="p">);</span>
+<span class="nv">$cssCombined</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+<span class="c1">// Extract and load all &lt;link rel="stylesheet"&gt; CSS files</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$xpath</span><span class="o">-&gt;</span><span class="nf">query</span><span class="p">(</span><span class="s1">'//link[@rel="stylesheet"]'</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$link</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$href</span> <span class="o">=</span> <span class="nv">$link</span><span class="o">-&gt;</span><span class="nf">getAttribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">);</span>
+    <span class="nv">$css</span> <span class="o">=</span> <span class="o">@</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$href</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$css</span> <span class="o">!==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$cssCombined</span> <span class="mf">.</span><span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="mf">.</span> <span class="nv">$css</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nv">$link</span><span class="o">-&gt;</span><span class="n">parentNode</span><span class="o">-&gt;</span><span class="nf">removeChild</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span> <span class="c1">// Remove link tag</span>
+<span class="p">}</span>
+
+<span class="nv">$html</span> <span class="o">=</span> <span class="nv">$dom</span><span class="o">-&gt;</span><span class="nf">saveHTML</span><span class="p">();</span>
+
+<span class="c1">// Minify CSS (basic)</span>
+<span class="nv">$cssCombined</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/\s+/'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="nv">$cssCombined</span><span class="p">);</span>
+<span class="nv">$cssCombined</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/\/\*.*?\*\//s'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="nv">$cssCombined</span><span class="p">);</span>
+<span class="nv">$cssCombined</span> <span class="o">=</span> <span class="nb">preg_replace</span><span class="p">(</span><span class="s1">'/\s*([{};:&gt;,])\s*/'</span><span class="p">,</span> <span class="s1">'$1'</span><span class="p">,</span> <span class="nv">$cssCombined</span><span class="p">);</span>
+<span class="nv">$cssCombined</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">';}'</span><span class="p">,</span> <span class="s1">'}'</span><span class="p">,</span> <span class="nv">$cssCombined</span><span class="p">);</span>
+
+<span class="c1">// Inline CSS into HTML</span>
+<span class="nv">$inliner</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CssToInlineStyles</span><span class="p">();</span>
+<span class="nv">$inliner</span><span class="o">-&gt;</span><span class="nf">setHTML</span><span class="p">(</span><span class="nv">$html</span><span class="p">);</span>
+<span class="nv">$inliner</span><span class="o">-&gt;</span><span class="nf">setCSS</span><span class="p">(</span><span class="nv">$cssCombined</span><span class="p">);</span>
+<span class="nv">$inlinedHtml</span> <span class="o">=</span> <span class="nv">$inliner</span><span class="o">-&gt;</span><span class="nf">convert</span><span class="p">();</span>
+
+<span class="c1">// Send as downloadable file</span>
+<span class="nv">$filename</span> <span class="o">=</span> <span class="s2">"My-Inlined-Design-"</span> <span class="mf">.</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Ymd_His"</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">".html"</span><span class="p">;</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Type: text/html'</span><span class="p">);</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Disposition: attachment; filename="'</span> <span class="mf">.</span> <span class="nv">$filename</span> <span class="mf">.</span> <span class="s1">'"'</span><span class="p">);</span>
+<span class="nb">header</span><span class="p">(</span><span class="s1">'Content-Length: '</span> <span class="mf">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$inlinedHtml</span><span class="p">));</span>
+<span class="k">echo</span> <span class="nv">$inlinedHtml</span><span class="p">;</span>
+
+</code></pre></div>
+<p>If the HTML design contains references to external CSS files, it is considered best practice to fetch those styles and apply them directly to the HTML content using inline CSS. This makes the HTML self-contained and more compatible with various browsers and email clients that may not support external CSS references. The inlining process can be handled by a server-side script and performed just before the HTML is downloaded. See the example on the right, which also includes CSS minification.</p>
+<h1 id='features-overview'>Features overview</h1><h2 id='visual-drag-amp-drop-designer'>Visual drag &amp; drop designer</h2>
+<p>Build your perfect page with ease — simply drag and drop elements exactly where you want them. No need to write a single line of HTML code. Whether you&#39;re a designer, marketer, or just getting started, BuilderJS makes page creation fast, intuitive, and enjoyable. Focus entirely on your creative vision while the builder handles the underlying code, structure, and responsiveness — giving you beautiful results without the technical hassle.</p>
+<h2 id='visual-styling-sade-easy'>Visual styling sade easy</h2>
+<p>Style your HTML page effortlessly with BuilderJS&#39;s intuitive visual controls. There&#39;s no need to learn or even glance at CSS code—just point, click, and adjust. Modify colors, fonts, spacing, borders, shadows, hover effects, and more with smart UI panels that respond in real time. Whether you&#39;re refining typography or creating subtle animations, our interface empowers you to bring your design ideas to life with pixel-level precision—all while maintaining clean, valid code behind the scenes.</p>
+<h2 id='rich-library-of-composite-elements'>Rich library of composite elements</h2>
+<p>Build faster with a rich collection of pre-designed, fully customizable composite elements. Choose from navigation menus, hero sections, pricing tables, testimonials, feature blocks, social icon sets, sliders, and banners—each thoughtfully designed and ready to use. Simply drag and drop components into your layout, then fine-tune them to match your brand or project requirements. These ready-made blocks help you create modern, professional layouts without reinventing the wheel, saving you hours of manual work.</p>
+<h2 id='seamless-device-preview'>Seamless Device Preview</h2>
+<p>Ensure your page looks stunning on every screen size with BuilderJS&#39;s responsive preview modes. Instantly switch between mobile, tablet, and desktop views to see exactly how your content adapts across devices. No guesswork, no resizing your browser—just real-time previews that reflect modern responsiveness standards. Fine-tune layouts and element spacing per device to achieve perfect results, whether you&#39;re designing a landing page, email, or a responsive website.</p>
+<h2 id='ai-powered-content-assistance'>AI-Powered Content Assistance</h2>
+<p>Let AI accelerate your creative process like never before. BuilderJS&#39;s built-in AI assistant can automatically generate meaningful headlines, filler text, calls to action, and even full sections of your page content—all based on your instructions or theme. It can fix grammar, rewrite text, suggest better phrasing, and ensure a consistent tone across your design. Whether you&#39;re stuck on copy or in a rush, AI helps you move forward with quality content in seconds.</p>
+<h2 id='universal-template-format'>Universal Template Format</h2>
+<p>BuilderJS is powered by a flexible, human-readable markup language designed for real-world design and development workflows. Whether you&#39;re a designer looking to make your template editable or a developer integrating dynamic content, BuilderJS&#39;s format makes it easy. Convert your static HTML designs into reusable themes that work seamlessly inside the builder—complete with editable zones, smart components, and modular layouts. This universal format bridges the gap between creativity and productivity.</p>
+<h2 id='clean-amp-semantic-html-output'>Clean &amp; Semantic HTML Output</h2>
+<p>Every page you build with BuilderJS is backed by professionally structured, semantic HTML code—optimized for real-world use. Whether you&#39;re deploying to production, integrating with a CMS, or sending as part of an email campaign, you can trust the code is lightweight, accessible, and compliant with best practices. SEO experts, accessibility auditors, and developers alike will appreciate the minimalistic yet meaningful output, making integration and maintenance a breeze.</p>
+<h2 id='revision-history'>Revision History</h2>
+<p>Never worry about making a mistake again. BuilderJS includes powerful version history tracking, so you can experiment freely and revert back to any previous version of your design with a single click. Automatic saving ensures your work is protected in real time, and manual checkpoints let you capture key design milestones. Whether you&#39;re A/B testing layouts or fixing an accidental change, revision history gives you peace of mind and total creative freedom.</p>
+<h1 id='theme-amp-template'>Theme &amp; template</h1>
+<p>A theme consists of sample element templates that share a unified style. Every website or page in BuilderJS is based on a theme. In BuilderJS, a theme is actually a set of many HTML element templates that users can quickly drag and drop them into the page designer. Each theme comes with its own unique styles and a predefined set of HTML elements for users to choose from.</p>
+
+<p>Some examples of HTML elements in a theme include:</p>
+
+<ul>
+<li>Menu bar</li>
+<li>Main banner</li>
+<li>Carousel banner</li>
+<li>About us block</li>
+<li>New features block</li>
+<li>Footer area</li>
+<li>Testinomial area</li>
+</ul>
+
+<p>Users can simply choose an element, drag and drop it into the designer view, and modify the element&#39;s content to make up their own page.</p>
+
+<p>In addition to the available templates in BuilderJS, you can also create custom themes to enhance your users&#39; experience. To create a theme for BuilderJS, you&#39;ll need to understand its theme markup language and conventions. Generally, the process of creating an BuilderJS theme involves the following steps:</p>
+
+<ul>
+<li>Step 1: Design a visually appealing HTML template that includes all possible elements.</li>
+<li>Step 2: Break the template into smaller HTML components, each wrapped with BuilderJS&#39;s custom markup.</li>
+<li>Step 3: Publish your theme (the individual HTML components).</li>
+</ul>
+
+<p>Detailed specifications and guidelines for working with themes are still in development. The BuilderJS team is actively working to release more themes for users every day. A comprehensive guide will be available soon to help development teams create their own themes with ease.</p>
+<h1 id='common-issues'>Common issues</h1>
+<table><thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Page blank</td>
+<td>When loading our pre-built demo folder, if you see that the page is just blank without any content, then it is very likely that the core files <code>builder.js</code> is not referenced correctly. Make sure you use the correct absolute or relative path to the file.</td>
+</tr>
+<tr>
+<td>Element not found error</td>
+<td>Sometimes, you might get a blank page with such message. Check the <code>mainContainer</code> parameter you pass to the builder and ensure it matches the valid ID of an HTML element that serves as the container for BuilderJS’s rendering. Notice that it should be an ID string which is compatible with CSS selector.</td>
+</tr>
+<tr>
+<td>Page frozen</td>
+<td>In certain cases, the browser may become frozen and unresponsive after a while. This is very likely caused by a JavaScript function running in an infinite loop. Often, the issue stems from event handler code, particularly the changed event. Make sure you do not execute long-running functions in your changed event handler, as this event is triggered very frequently during user interactions.</td>
+</tr>
+<tr>
+<td>Styles broken</td>
+<td>If the page loads but appears without proper styles, it’s very likely that the <code>builder.css</code> file is not correctly referenced. Verify that you’re using the correct path to the CSS file.</td>
+</tr>
+<tr>
+<td>Error saving or exporting</td>
+<td>Save and export operations are handled by server-side scripts. To debug issues, check your server’s log files for details. Alternatively, you can wrap your server script in a try/catch block to return readable exception messages to the browser. See the Error codes table below for a list of supported HTTP status codes.</td>
+</tr>
+</tbody></table>
+<h1 id='customization'>Customization</h1><div class="highlight"><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+    <span class="kd">class</span> <span class="nx">MySampleWidget</span> <span class="kd">extends</span> <span class="nx">Widget</span> <span class="p">{</span>
+        <span class="c1">// get HTML to insert into content</span>
+        <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">super</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="nx">title</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="dl">'</span><span class="s1">My Sample Widget</span><span class="dl">'</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">renderHtml</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="dl">'</span><span class="s1">&lt;div&gt; A Simple Widget with 1 line of text &lt;/div&gt;</span><span class="dl">'</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// custom behavior goes here...</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<p>BuilderJS is written with a well-designed structure that allows for easy and straightforward customization. For example, you can add your own custom widget to the library alongside the default ones such as Text, Image, Video, Social Network Icons, and more. Check the right panel&#39;s JavaScript tab to learn how to create a custom widget.</p>
+
+<p>By extending the Widget base class, your MySampleWidget will automatically inherit all the common widget behaviors like drag-and-drop functionality, and support for moving, duplicating, and deleting. You can also define its own characteristics, such as title and thumbnail, by overriding the corresponding methods.</p>
+
+<p>Documentation is currently being updated. In the meantime, please contact us for more details on this topic.</p>
+<h1 id='api-reference'>API reference</h1><h2 id='api-methods'>API methods</h2>
+<p>Since BuilderJS is a pure JavaScript library that accepts parameters during initialization, it can be integrated with any programming language or database system.</p>
+
+<p>Its main function is to load an HTML template, allow users to make changes via visual drag-and-drop or source editing, and then submit those changes to the server for further handling, communication is made by <strong>Ajax</strong>. You can use PHP, Ruby, Python, Java, .NET, or any other server-side scripting language to handle BuilderJS requests. The distributable package also includes sample PHP scripts for saving, exporting, and more.
+exporting, and more.</p>
+
+<p>In the browser, you can interact with BuilderJS through its public methods</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>getJson()</code></td>
+<td>Retrieve the JSON content of the current page. Use this method to save your current work. i.e. pass to a server script for storing. This JSON data can be loaded into the builder later when a user opens an existing project.</td>
+</tr>
+<tr>
+<td><code>getHtml()</code></td>
+<td>Retrieve the HTML content of the current page. Use this method to capture the final HTML output of the builder to publish or export.</td>
+</tr>
+<tr>
+<td><code>select(id)</code></td>
+<td>Selects an element on the current page, specified by its unique <code>id</code>. This method is useful when you want to interact with a specific element in the current page.</td>
+</tr>
+<tr>
+<td><code>unselect()</code></td>
+<td>Deselects any currently selected element on the page. Notice that any unsaved change made to a selected element shall be discarded.</td>
+</tr>
+<tr>
+<td><code>getSelectedElement()</code></td>
+<td>Returns the currently selected element on the page.</td>
+</tr>
+<tr>
+<td><code>insertElements(list)</code></td>
+<td>Inserts a list of elements into the current page. This method is useful when you want to programmatically interact with the builder.</td>
+</tr>
+<tr>
+<td><code>addWidgets(item)</code></td>
+<td>Adds a new widget to the widget panel. This method is useful when you want to define your own custom widgets.</td>
+</tr>
+<tr>
+<td><code>load(json)</code></td>
+<td>Loads a custom page defined by the provided JSON structure. The JSON must comply with BuilderJS’s specifications and conventions.</td>
+</tr>
+</tbody></table>
+<h2 id='events'>Events</h2><div class="highlight"><pre class="highlight html tab-html"><code><span class="nt">&lt;script&gt;</span>
+
+    <span class="c1">// Sample event handling code that</span>
+    <span class="c1">// listens for an event and executes custom code when triggered</span>
+
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">loaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The page has been loaded into BuilderJS!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<p>The following are BuilderJS’s events that you can watch for to detect changes and interactions within the editor:</p>
+
+<table><thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>initialized</code></td>
+<td>The builder has completed its initialization process and is fully ready for use. At this stage, all resources, configurations, and UI components have been loaded, allowing users or scripts to safely interact with the builder and start creating or loading pages.</td>
+</tr>
+<tr>
+<td><code>loaded</code></td>
+<td>A page has been successfully loaded into the builder. This event indicates that the builder has parsed the page content and rendered it visually in the workspace, making it ready for editing or further manipulation.</td>
+</tr>
+<tr>
+<td><code>modified</code></td>
+<td>An existing element within the page has been modified. This includes changes to attributes, styles, text content, or any other editable properties. This event is triggered whenever a user updates an element’s properties or appearance.</td>
+</tr>
+<tr>
+<td><code>inserted</code></td>
+<td>A new element has been added to the page. This occurs when a user drags and drops a new component into the layout or when an element is programmatically inserted via an API. The event signals that the page structure has expanded.</td>
+</tr>
+<tr>
+<td><code>deleted</code></td>
+<td>An element has been removed from the page. This event fires when a user deletes an element from the canvas or when elements are programmatically removed, indicating that the page structure has been altered.</td>
+</tr>
+<tr>
+<td><code>changed</code></td>
+<td>A general event indicating that some change has occurred within the page. It acts as a catch-all for other specific events, including modifications, insertions, deletions, or any other edits that impact the page’s current state. It’s useful for saving, versioning, or triggering custom behaviors whenever any edit is made.</td>
+</tr>
+</tbody></table>
+<h1 id='error-codes'>Error codes</h1>
+<p>For reference, the following error codes should be used by the server side scripting to better communicate with BuilderJS. When the server-side script returns the correct error code in the AJAX response, BuilderJS will be able to display the corresponding messages in the appropriate format.</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+As you can see, getting Builder up and running involves a few steps. This is because Builder was intentionally designed to be fully customizable. While the documentation is continuously being updated, please feel free to contact the development team for further details on integrating Builder with your application. Thank you!
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="html">html</a>
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
